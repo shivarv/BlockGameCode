@@ -1,0 +1,6 @@
+.THIS div.myClass {
+    min-height : 100px !important;
+    min-width : 100px !important;
+    background-color: green !important;
+    display: block !important;
+}

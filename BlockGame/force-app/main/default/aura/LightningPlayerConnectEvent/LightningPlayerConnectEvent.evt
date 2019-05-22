@@ -1,0 +1,8 @@
+<aura:event type="Component"  description="Player Connect Request Streaming Event">
+    <aura:attribute type="String" name="player1Id"></aura:attribute>
+    <aura:attribute type="String" name="player2Id"></aura:attribute>
+    <aura:attribute type="String" name="playerGameBoardId"></aura:attribute>
+    <aura:attribute type="String" name="playerType"></aura:attribute>
+    <aura:attribute type="String" name="gameCreationTime"></aura:attribute>
+
+</aura:event>

@@ -1,0 +1,37 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		Player Creation Form Component
+						    This component helps in filling the player details
+
+
+  
+-->
+
+<aura:component  controller="GamePlayRequestController">
+	<!-- attribute start -->
+    <aura:attribute name="userNameAtt" type="String" default="shiv"></aura:attribute>
+    <aura:attribute name="userEmailAtt" type="String" default="shiv@gmail.com"></aura:attribute>
+    <aura:attribute name="userGenderAtt" type="String" default="Male"></aura:attribute>
+    <aura:attribute name="playerRecordId" type="String"></aura:attribute>
+	<!-- attribute end -->
+    
+    <!-- register event start -->
+    <aura:registerEvent name="changeComponentEvent" type="c:LightningComponentChangeEvent"/>
+    <!-- register event end-->
+
+    <lightning:input name="userName" label="user name" value="{!v.userNameAtt}"></lightning:input>	
+    <lightning:input name="userEmail" label="user Email" value="{!v.userEmailAtt}"></lightning:input>	
+	<lightning:select aura:id="userGender" name="userGender" label="Player Type" 
+                value="{!v.userGenderAtt}" 
+                messageWhenValueMissing="You must define the player type">
+        <option text="Male" value="Male" selected="true"></option>
+        <option text="Female" value="Female" ></option>
+
+    </lightning:select>
+       <lightning:button onclick="{!c.createPlayer}" label="Create Player"></lightning:button>
+
+   {!v.userGenderAtt},{!v.userNameAtt},{!v.userEmailAtt}
+</aura:component>

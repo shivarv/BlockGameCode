@@ -1,0 +1,65 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		This component is used for making request to connect between players
+
+
+  
+-->
+<aura:component controller="GamePlayRequestController">
+    <!-- attribute start -->
+	<aura:attribute name="codeDefaultValues" type="Map" default="{ requestTime:'50000' }"></aura:attribute>
+    <aura:attribute name="playerId" type="String" default="empty"></aura:attribute>
+    <aura:attribute name="player1Id" type="String" default="empty"></aura:attribute>
+    <aura:attribute name="player2Id" type="String" default="empty"></aura:attribute>
+
+    <aura:attribute name="playerName" type="String" default="No Name"></aura:attribute>
+    <aura:attribute name="player1Name" type="String" default="No Name"></aura:attribute>
+    <aura:attribute name="player2Name" type="String" default="No Name"></aura:attribute>
+    
+    <aura:attribute name="playerBoardId" type="String" default=""></aura:attribute>
+
+    <aura:attribute name="playerTypeAtt" type="String" default="Player 1"></aura:attribute>
+    <aura:attribute name="eventTimeToSubscribe" type="String"></aura:attribute>
+    
+    <aura:attribute name="requestedEventTime" type="String"></aura:attribute>
+
+    <!-- used to check if the current component state is receive or sent 
+		Helpful for concurrent execution handling
+		Receive Mode or Requested Mode
+	-->
+    <aura:attribute name="currentPlayerMode" type="String" default="Receive Mode"></aura:attribute>
+
+    <!-- attribute end -->
+    
+    <!-- Register Events Start -->
+
+    <aura:registerEvent name="changeComponentEvent"  type="c:LightningComponentChangeEvent"/>
+    <!-- Register Events End-->
+    
+    <!-- Event Handlers  Start -->
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"></aura:handler>
+    <aura:handler name="playerConnectEvent"  event="c:LightningPlayerConnectEvent" action="{!c.playerConnectEventHandler}"/>
+    <aura:handler name="playerAcceptEvent"  event="c:PlayerAcceptEvent" action="{!c.dualAcceptEventHandler}"/>
+
+
+    <!-- Event Handlers End -->
+    
+	<!-- Aura Dependency Start -->
+         <aura:dependency resource="markup://c:AcceptToDualCom" />
+
+    
+    <!-- Aura Dependeny End -->
+    PId - {!v.playerId} , P1Id - {!v.player1Id}, P2Id - {!v.player2Id} <br/>
+    pName - {!v.playerName}, p1Name - {!v.player1Name} , p2Name - {!v.player2Name} <br/>
+    playerType - {!v.playerTypeAtt} ,eventTime - {!v.eventTimeToSubscribe} , re - {!v.requestedEventTime} <br/>
+    BoardId - {!v.playerBoardId}  <br/>
+   <c:EventSubscriptionCmp currentPlayerMode="{!v.currentPlayerMode}"></c:EventSubscriptionCmp>
+   <lightning:button onclick="{!c.requestToConnect}" label="Request To Connect"></lightning:button>
+
+   <div aura:id="ModalDialogPlaceholder" />
+
+</aura:component>

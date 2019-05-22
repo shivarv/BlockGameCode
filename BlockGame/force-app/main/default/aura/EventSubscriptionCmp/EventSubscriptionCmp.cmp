@@ -1,0 +1,35 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		Lightning Event Subscription Comp , It is used to be unsubcribe and unsubscribe to events
+
+  
+-->
+<aura:component controller="StreamingApiController" >
+	   <ltng:require scripts="{!join(',', $Resource.StreamingApi+'/StreamingAPI/JQueryComet/Cometd.js',$Resource.StreamingApi+'/StreamingAPI/jquery_1.5.2.min.js',$Resource.StreamingApi+'/StreamingAPI/JQueryComet/json2.js',$Resource.StreamingApi+'/StreamingAPI/JQueryComet/jquery.cometd.js')}"
+                  afterScriptsLoaded="{!c.doInit}" />
+    
+    <!-- attribute start -->
+    <aura:attribute name="eventName" type="String" required="true" default="shivaBlockGame__Board_Dual_Request__e"/>
+    <aura:attribute name="subscriptionId" type="Object"></aura:attribute>
+    <aura:attribute name="eventTimeToSubscribe" type="String"></aura:attribute>
+    <aura:attribute name="currentPlayerMode" type="String"></aura:attribute>
+    <!-- attribute end -->
+    <aura:method name="unsubcribeMethod" action="{!c.unsubscribe}"></aura:method>
+    <aura:method name="setNewSubscriptionMethod" action="{!c.setNewEventListener}"></aura:method>
+    <aura:method name="setEventTimeMethod" action="{!c.setEventTime}"></aura:method>
+
+    <!-- attribute end -->
+    
+    <!-- Register Events Start -->
+    <aura:registerEvent name="playerConnectEvent"  type="c:LightningPlayerConnectEvent"/>
+    <!-- Register Events End-->
+    
+    <!-- Event Handler  Start-->
+     <!--   <aura:handler name="playerConnectEvent" type="c:LightningPlayerConnectEvent" action="{!c.handlePlayerConnectEvent}"/> -->
+
+    <!-- Event Handler End -->
+
+</aura:component>

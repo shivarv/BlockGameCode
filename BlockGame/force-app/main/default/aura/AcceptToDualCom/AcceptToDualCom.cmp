@@ -1,0 +1,49 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		This Component is used for Accepting or Rejecting Dual
+
+  
+-->
+<aura:component>
+	
+    <!-- attribute start -->
+      <aura:attribute name="title" type="String" default=" is ready to Dual"/>
+      <aura:attribute name="player1Id" type="String" ></aura:attribute> 
+      <aura:attribute name="player2Id" type="String" ></aura:attribute> 
+      <aura:attribute name="player1Name" type="String" default="no Name"></aura:attribute> 
+      <aura:attribute name="player2Name" type="String" default="no Name"></aura:attribute> 
+    
+    <aura:attribute name="player1RequestTime" type="String" default="Not Set"></aura:attribute>
+	<!-- attribute end -->
+    
+    <!-- Register Events Start -->
+    <aura:registerEvent name="playerAcceptEvent"  type="c:PlayerAcceptEvent"/>
+    <!-- Register Events End-->
+    
+     <div class="demo-only"  style="height: 100%;">
+            <section  class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-modal__close" title="Close" 
+                                onclick="{!c.closeMe}">
+                            <lightning:icon class="white slds-icon_small" iconName="utility:close"/> 
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        {!v.player1RequestTime}  {!v.player1Name}  {!v.title}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" > 
+                        {!v.player1Name} - {!v.player1Id} , {!v.player2Name} - {!v.player2Id}
+                    </div>
+                    <footer class="slds-modal__footer"> 
+   <lightning:button onclick="{!c.acceptDual}" label="Accept Dual"></lightning:button>
+   <lightning:button onclick="{!c.rejectDual}" label="Decline Dual"></lightning:button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+</aura:component>

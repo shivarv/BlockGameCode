@@ -1,0 +1,31 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-26-2018
+ * Description		:		This event is generated for individual Block User Click Update
+							This event is generated on capture of 
+							platform event shivaBlockGame__Individual_Block__c
+
+
+	Platform Event Fields :
+	shivaBlockGame__Block_Board_Id__c,shivaBlockGame__individual_Block_Id__c,
+	shivaBlockGame__player_Turn_On_Event__c,shivaBlockGame__playerType__c,
+	shivaBlockGame__streamGamePlayType__c,shivaBlockGame__isElementOpen__c,
+	shivaBlockGame__isBlockElementFound__c
+    
+    Event Fields :
+	blockBoardId,individualBlockId,playerTurnOnEvent,PlayerType,gamePlayType,
+	isElementOpen,isBlockElementFound
+-->
+<aura:event type="COMPONENT" description="This event is generated when game is over 
+The event will return if player 1 won or lost or draw" >
+
+    <aura:attribute type="String" name="blockBoardId"></aura:attribute>
+    <aura:attribute type="String" name="individualBlockId"></aura:attribute>
+    <aura:attribute type="String" name="playerTurnOnEvent"></aura:attribute>
+    <aura:attribute type="String" name="PlayerType"></aura:attribute>
+    <aura:attribute type="String" name="gamePlayType"></aura:attribute>
+    <aura:attribute type="Boolean" name="isElementOpen"></aura:attribute>
+    <aura:attribute type="Boolean" name="isBlockElementFound"></aura:attribute>
+</aura:event>

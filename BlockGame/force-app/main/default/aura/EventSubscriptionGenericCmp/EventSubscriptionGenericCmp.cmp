@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome">
+    <lightning:empApi aura:id="empApi"/>
+    <aura:attribute name="channel" type="String" default="/event/shivaBlockGame__Board_Dual_Request__e"/>
+    <aura:attribute name="subscription" type="Map"/>
+    <aura:attribute name="notifications" type="List"/>
+	<aura:attribute name="isMuted" type="Boolean" default="false"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"></aura:handler>
+    hello <br/>
+    <aura:iteration items="{!v.notifications}" var="obj">
+	{!obj.message}
+    </aura:iteration>
+
+</aura:component>

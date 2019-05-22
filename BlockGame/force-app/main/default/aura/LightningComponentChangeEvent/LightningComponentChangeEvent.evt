@@ -1,0 +1,14 @@
+<aura:event type="Component" description="Component Change Event" >
+    <aura:attribute type="Aura.Component" name="oldComponentToDelete"></aura:attribute>
+    <aura:attribute type="String" name="newComponentName"></aura:attribute>
+    <aura:attribute type="String" name="playerId"></aura:attribute>
+    <aura:attribute type="String" name="playerName"></aura:attribute>
+    
+    <aura:attribute type="String" name="player1Id"></aura:attribute>
+    <aura:attribute type="String" name="player2Id"></aura:attribute>
+    <aura:attribute type="String" name="player1Name"></aura:attribute>
+    <aura:attribute type="String" name="player2Name"></aura:attribute>
+    <aura:attribute type="String" name="blockBoardId"></aura:attribute>
+    <aura:attribute type="String" name="playerType"></aura:attribute>
+
+</aura:event>

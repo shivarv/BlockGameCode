@@ -1,0 +1,8 @@
+<aura:event type="Component" description="This event is generated if the user accepts" >
+    <aura:attribute name="isDualAccepted" type="Boolean" default="true"></aura:attribute>
+    <aura:attribute name="player1Id" type="String"></aura:attribute>
+    <aura:attribute name="player1Name" type="String"></aura:attribute>
+    <aura:attribute name="player1RequestTime" type="String"></aura:attribute>
+
+
+</aura:event>

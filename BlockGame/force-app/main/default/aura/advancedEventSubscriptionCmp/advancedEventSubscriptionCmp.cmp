@@ -1,0 +1,32 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		Lightning Event Subscription Comp , It is used to be unsubcribe and unsubscribe to events
+
+  
+-->
+<aura:component controller="StreamingApiController" >
+	   <ltng:require scripts="{!join(',', $Resource.StreamingApi+'/StreamingAPI/JQueryComet/Cometd.js',$Resource.StreamingApi+'/StreamingAPI/jquery_1.5.2.min.js',$Resource.StreamingApi+'/StreamingAPI/JQueryComet/json2.js',$Resource.StreamingApi+'/StreamingAPI/JQueryComet/jquery.cometd.js')}"
+                  afterScriptsLoaded="{!c.doInit}" />
+    
+    <!-- attribute start -->
+    <aura:attribute name="eventName" type="String" required="true" default="shivaBlockGame__Individual_Block_Change_Event__e"/>
+    <aura:attribute name="subscriptionId" type="Object"></aura:attribute>
+    <aura:attribute name="currentPlayerType" type="String"></aura:attribute>
+    <aura:attribute name="blockBoardId" type="String"></aura:attribute>
+
+    <!-- attribute end -->
+    
+    <!-- Register Events Start -->
+    <aura:registerEvent name="ImageBlockUpdateEvent"  type="c:ImageBlockUpdateEvent"/>
+    <aura:registerEvent name="ImageBlockSpecialEvent"  type="c:ImageBlockSpecialEvent"/>
+    <aura:registerEvent name="GameCompletedEvent"  type="c:GameCompletedEvent"/>
+
+    <!-- Register Events End-->
+    
+   
+	in advnaced Event Subscription : {!v.blockBoardId} , {!v.currentPlayerType}
+    
+</aura:component>

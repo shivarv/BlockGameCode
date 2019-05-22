@@ -1,0 +1,80 @@
+<!--
+
+
+ * created by 		:		Shiva RV
+ * Date				:		11-21-2018
+ * Description		:		This component contains the blockGame
+							Final Game component which is the playing screen
+							This component is created dynamically by GamePlayerRequestCmp			
+
+
+  
+-->
+<aura:component controller="GamePlayRequestController">
+    <!-- attribute start -->
+    
+    <aura:attribute name="boardDataWrapper" type="GameBoardElementWrapper"></aura:attribute>
+    <aura:attribute name="indiBlocksList" type="List"></aura:attribute>
+    <aura:attribute name="imageBlockIdMap" type="Map"></aura:attribute>
+    <aura:attribute name="defaultCloseImageName" type="String" default="notSelectedImage"></aura:attribute>
+
+    <aura:attribute name="player1Id" type="String" default="empty"></aura:attribute>
+    <aura:attribute name="player2Id" type="String" default="empty"></aura:attribute>
+
+    <aura:attribute name="player1Name" type="String" default="No Name"></aura:attribute>
+    <aura:attribute name="player2Name" type="String" default="No Name"></aura:attribute>
+    
+    <aura:attribute name="blockBoardId" type="String"></aura:attribute>
+
+    <aura:attribute name="playerType" type="String" default="Player 1"></aura:attribute>
+    
+	<aura:attribute name="yourPoints" type="String" default="0"></aura:attribute>
+    <aura:attribute name="opponentPoints" type="String" default="0"></aura:attribute>
+
+    <aura:attribute name="isGameOver" type="Boolean" default="false"></aura:attribute>
+    <aura:attribute name="isWinner" type="Boolean" default="false"></aura:attribute>
+	<aura:attribute name="gameOverText" type="Boolean"></aura:attribute>
+    
+    <aura:attribute name="isYourTurn" type="Boolean"></aura:attribute>
+    <aura:attribute name="whoseTurnText" type="String"></aura:attribute>
+
+    <aura:attribute name="individualBlockIdsList" type="List" 
+         description="This is used to sent for special event for apex"></aura:attribute>
+    
+    <aura:attribute name="specialEventList" type="List" 
+         description="This is used to sent for special event handler"></aura:attribute>
+    
+    <!-- attribute end -->
+    
+    <!-- aura:Handler start -->
+       <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+       <aura:handler name="ImageBlockUpdateEvent" event="c:ImageBlockUpdateEvent" action="{!c.imageBlockUpdateEventHandler}"/> 
+       <aura:handler name="ImageBlockSpecialEvent" event="c:ImageBlockSpecialEvent" action="{!c.imageBlockSpecialEventHandler}"/> 
+       <aura:handler name="GameCompletedEvent"  event="c:GameCompletedEvent" action="{!c.gameCompletedEventHandler}"/>
+
+    <!-- aura:Handler end -->
+    P1 Id - {!v.player1Id} , P2 Id - {!v.player2Id} <br/>
+    P1 Name - {!v.player1Name} , P2 Name - {!v.player2Name} <br/>
+    BoardId - {!v.blockBoardId} , {!v.playerType} <br/>
+    Is your move - {!v.isYourTurn} , {!v.whoseTurnText} <br/>
+    game Text - {!v.gameOverText} <br/>
+    Points - your score - {!v.yourPoints} , opponent score - {!v.opponentPoints},
+    
+      <table>
+        <aura:iteration items="{!v.indiBlocksList}" var="singleBlockImageList"  indexvar="index">
+          <tr>
+              
+            <aura:iteration items="{!singleBlockImageList.value}" var="imageName"  indexvar="index">
+                 <td id="{! 'td-' + imageName.Id}" onclick="{!c.selectedImage}" data-record="{!imageName.shivaBlockGame__image_Name__c}"
+                      data-objectid="{!imageName.Id}" >
+                 
+              	<img src="{!$Resource.ImageResource +'/Images/notSelectedImage.jpg'}" width="100" height="75"></img>
+                
+                </td>
+            </aura:iteration>
+            </tr> 
+    </aura:iteration>
+        </table>
+    <c:advancedEventSubscriptionCmp blockBoardId="{#v.blockBoardId}" currentPlayerType="{#v.playerType}"></c:advancedEventSubscriptionCmp>
+    
+</aura:component>

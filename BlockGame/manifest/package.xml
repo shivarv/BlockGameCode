@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+	<members>*</members>
+    <name>ApexClass</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>ApexPage</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>ApexTrigger</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>AuraDefinitionBundle</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>LightningComponentBundle</name>
+  </types>
+  <types>
+    <members>ConnectMeAdmin</members>
+    <name>CustomApplication</name>
+  </types>
+  <types>
+    <members>CustomLabels</members>
+    <name>CustomLabels</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>CustomMetadata</name>
+  </types>
+  <types>
+    <members>AudienceSettings__c</members>
+    <members>Activity</members>
+    <members>ActionType__mdt</members>
+    <members>UserCriteriaFields__mdt</members>
+    <members>Content__c</members>
+    <members>ContentCollectionItem__c</members>
+    <members>EnvironmentSettings__c</members>
+    <members>RecommendedContent__c</members>
+    <members>RecommendedContentItem__c</members>
+    <members>UserContent__c</members>
+    <members>BatchStatusEvent__e</members>
+    <members>ExternalContent__c</members>
+    <members>Picklist__c</members>
+    <members>PicklistDependency__c</members>
+    <members>PicklistValue__c</members>
+    <members>PicklistValueDependency__c</members>
+    <members>PicklistCollectionItem__c</members>
+    <members>Case</members>
+    <members>Contact</members>
+    <name>CustomObject</name>
+  </types>
+  <types>
+    <members>ActionType__mdt-en_US</members>
+    <members>AudienceSettings__c-en_US</members>
+    <members>Content__c-en_US</members>
+    <members>ContentCollectionItem__c-en_US</members>
+    <members>EnvironmentSettings__c-en_US</members>
+    <members>RecommendedContent__c-en_US</members>
+    <members>RecommendedContentItem__c-en_US</members>
+    <members>UserContent__c-en_US</members>
+    <members>ExternalContent__c-en_US</members>
+    <members>Picklist__c-en_US</members>
+    <members>PicklistDependency__c-en_US</members>
+    <members>PicklistValue__c-en_US</members>
+    <members>PicklistValueDependency__c-en_US</members>
+    <members>PicklistCollectionItem__c-en_US</members>
+    <name>CustomObjectTranslation</name>
+  </types>
+  <types>
+    <members>AudienceManager</members>
+    <members>Content__c</members>
+    <members>SettingsManager</members>
+    <members>OtherAudience</members>
+    <members>RecommendedContent__c</members>
+    <members>Picklist__c</members>
+    <name>CustomTab</name>
+  </types>
+  <types>
+    <members>SettingsManager</members>
+    <members>ContentCollectionRecordPage</members>
+    <members>ContentAlertsRecordPage</members>
+    <members>ContentRecordPage</members>
+    <members>ContentCompanyAlertsRecordPage</members>
+    <members>RecommendedContentRecordPage</members>
+    <members>ContentFormRecordPage</members>
+    <members>ContentVideoRecordPage</members>
+    <members>ContentBannerAlertsRecordPage</members>
+    <members>PicklistRecordPage</members>
+    <members>PicklistCollectionPage</members>
+    <members>ConnectMe_CM_Request_Details</members>
+    <members>ContentAAQRecordPage</members>
+    <members>ConnectMe_CM_To_Dos</members>
+    <members>ConnectMe_CM_Knowledge_Article</members>
+    <members>ConnectMe_CM_Profile</members>
+    <members>ConnectMe_CM_Request</members>
+    <members>ConnectMe_CM_MTM_Checklist</members>
+    <members>ContentCategoryRecordPage</members>
+    <members>ConnectMe_CM_Manage_Forms</members>
+    <name>FlexiPage</name>
+  </types>
+  <types>
+    <members>Content__c-CM Content Alerts Layout</members>
+    <members>Content__c-CM Content Banner Alert Layout</members>
+    <members>Content__c-CM Content Collection Layout</members>
+    <members>Content__c-CM Content Company Alert Layout</members>
+    <members>Content__c-CM Content Form Layout</members>
+    <members>Content__c-CM Content Layout</members>
+    <members>Content__c-CM Content Video Layout</members>
+    <members>RecommendedContent__c-Recommended Content Layout</members>
+    <members>Picklist__c-Picklist Layout</members>
+    <members>Picklist__c-Picklist Collection Layout</members>
+    <members>Content__c-CM Content AAQ Layout</members>
+    <members>Content__c-CM Categories Layout</members>
+    <name>Layout</name>
+  </types>
+  <types>
+    <members>ConnectMeForm</members>
+    <name>Flow</name>
+  </types>
+  <types>
+    <members>Admin</members>
+    <name>Profile</name>
+  </types>
+  <types>
+    <members>*</members>
+    <name>PermissionSet</name>
+  </types>
+  <types>
+    <members>CM_Resources</members>
+    <members>LADM_Resources</members>
+    <name>StaticResource</name>
+  </types>
+  <types>
+    <members>en_US</members>
+    <name>Translations</name>
+  </types>
+  <version>45.0</version>
+</Package>
